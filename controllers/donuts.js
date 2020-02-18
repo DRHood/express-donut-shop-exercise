@@ -42,7 +42,11 @@ donutRouter.get('/:id', (req,res) => {
 //= =====================
 // Create a POST index route "/" that creates a new Donut
 // and upon success redirects back to the index page "/"
-
+donutRouter.post('/',(req, res) => {
+    Donut.create(req.body).then(() => {
+        res.redirect('/');
+    });
+});
 
 //= =====================
 // EDIT
