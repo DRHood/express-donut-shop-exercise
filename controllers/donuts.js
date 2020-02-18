@@ -53,7 +53,11 @@ donutRouter.post('/',(req, res) => {
 //= =====================
 // Create a GET edit route "/:id/edit" that renders the edit.hbs page and
 // sends that a Donut's data to it
-
+donutRouter.get('/:id/edit', (req, res) => {
+    Donut.findById(req.params.id).then(donut => {
+        res.render('donuts/edit', { donut });
+    });
+});
 
 //= =====================
 // UPDATE
