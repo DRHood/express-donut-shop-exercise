@@ -1,13 +1,13 @@
 // import { Schema } from "mongoose";
 
 // requirements: require db/connection as 'mongoose'
-const mongoose = require('db/connection');
+const mongoose = require('../db/connection');
 const Schema = mongoose.Schema;
 
 // create your donut schema:
 const Donut = new Schema({
 // Schema fields here
-// name, description, img, price, qty
+// TODO make name & description required
 name: String,
 description: String,
 img: String,

@@ -39,6 +39,9 @@ let newDonuts = [
   }
 ]
 
-Donut.create(newDonuts).then(donuts => {
+Donut.deleteMany().then (() => {
+  Donut.create(newDonuts).then(donuts => {
   console.log('Saved Donuts', donuts)
-})
+  });
+});
+
