@@ -5,13 +5,18 @@ let donutRouter = express.Router()
 // REQUIREMENTS
 //= =====================
 // require the Donut model
-
+const Donut = require('../models/Donut');
 
 //= =====================
 // INDEX
 //= =====================
 // Create a GET index route "/" that sends all Donuts to donuts/index.hbs view
-
+donutRouter.get('/', (req, res) => {
+    Donut.find().then(donuts => {
+        // console.log(donuts);
+        res.render('donuts/index', { donuts });
+    });
+});
 
 //= =====================
 // NEW
@@ -57,3 +62,4 @@ let donutRouter = express.Router()
 // EXPORTS
 //= =====================
 // export the controller with module.exports
+module.exports = donutRouter;

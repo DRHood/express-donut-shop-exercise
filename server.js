@@ -27,7 +27,7 @@ app.use(logger('dev'))
 // Router
 //= =====================
 // Links the server to our Router File
-// app.use('/', donutRouter)
+app.use('/', donutRouter)
 
 
 //= =====================
