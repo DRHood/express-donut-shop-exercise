@@ -64,7 +64,11 @@ donutRouter.get('/:id/edit', (req, res) => {
 //= =====================
 // Create a PUT update route "/:id" that updates the Donut and
 // redirects back to the SHOW PAGE (not index)
-
+donutRouter.put('/:id', (req, res) => {
+    Donut.findByIdAndUpdate(req.params.id, req.body).then(donut => {
+        res.redirect('/' + donut.id);
+    });
+});
 
 //= =====================
 // DELETE
