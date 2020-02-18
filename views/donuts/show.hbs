@@ -2,7 +2,7 @@
 
 	<h2>You are viewing:
 
-		<<<< DONUT NAME HERE >>>>
+		{{ donut.name }}
 
 	</h2>
 
@@ -11,33 +11,33 @@
 	<div class="donut-container-show">
 		<h2 id="donut-name">
 
-				<<<< DONUT NAME HERE >>>>
+				{{ donut.name }}
 
 		</h2>
 
-				<<<< DONUT IMAGE HERE >>>>
+				<img src="{{ donut.img }}" alt="">
 
 		<br>
 		<h3>Description:</h3>
 			<p>
 
-				<<<< DONUT DESCRIPTION HERE >>>>
+				{{ donut.description }}
 
 			</p><br>
 		<h3>Price:</h3>
 			<p id="cost">$
 
-				<<<< DONUT PRICE HERE >>>> each</p><br>
+				{{ donut.price }} each</p><br>
 
 			<h3 id="quantity">
 
-	 				<<<< DONUT QUANTITY >>>> remaining
+	 				{{ donut.qty }} remaining
 
 			</h3>
 
 			<br>
 
-			<<<< LINK TO THE DONUT's EDIT PAGE >>>>
+			<a href="/{{ donut.id }}/edit">Edit donut</a>
 
 			<<<< BONUS: BUTTON THAT UPDATES THE COUNT >>>>
 
