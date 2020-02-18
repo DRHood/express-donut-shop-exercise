@@ -13,7 +13,7 @@ const Donut = require('../models/Donut');
 // Create a GET index route "/" that sends all Donuts to donuts/index.hbs view
 donutRouter.get('/', (req, res) => {
     Donut.find().then(donuts => {
-        // console.log(donuts);
+        console.log(donuts);
         res.render('donuts/index', { donuts });
     });
 });
@@ -22,13 +22,20 @@ donutRouter.get('/', (req, res) => {
 // NEW
 //= =====================
 // Create a GET new route "/new" that renders the new.hbs form
-
+donutRouter.get('/new', (req, res) => {
+    res.render('donuts/new');
+});
 
 //= =====================
 // SHOW
 //= =====================
 // Create a GET show route "/:id" that renders a single Donut's show page
-
+donutRouter.get('/:id', (req,res) => {
+    Donut.findById(req.params.id).then(donut => {
+        console.log(donut);
+        res.render('donuts/show', { donut });
+    });
+});
 
 //= =====================
 // CREATE
