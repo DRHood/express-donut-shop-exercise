@@ -8,8 +8,14 @@ const Schema = mongoose.Schema;
 const Donut = new Schema({
 // Schema fields here
 // TODO make name & description required
-name: String,
-description: String,
+name: {
+    type: String,
+    required: true
+},
+description: {
+    type: String,
+    required: true
+},
 img: String,
 price: Number,
 qty: Number
