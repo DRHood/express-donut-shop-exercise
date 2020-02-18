@@ -39,7 +39,9 @@
 
 			<a href="/{{ donut.id }}/edit">Edit donut</a>
 
-			<<<< BONUS: BUTTON THAT UPDATES THE COUNT >>>>
+			<form action="{{ donut }}/buy?_method=PUT" method="POST">
+				<input type="submit" value="Buy Now!">
+			</form>
 
 		</div>
 

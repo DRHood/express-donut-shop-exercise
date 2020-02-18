@@ -18,6 +18,18 @@ donutRouter.get('/', (req, res) => {
     });
 });
 
+//get a random donut
+donutRouter.get('/random', (req, res) => {
+    //get all donuts as array
+    Donut.find().then(donuts => {
+    //get a random donut out of the arrayusing Math.random
+    let i = Math.floor(Math.random() * donuts.length);
+    let donut = donuts[i];
+    //render show page
+    res.render('donuts/show', { donut });
+    });
+});
+
 //= =====================
 // NEW
 //= =====================
@@ -81,6 +93,14 @@ donutRouter.delete('/:id', (req, res) => {
     });
 });
 
+donutRouter.put('/:id/buy', (req, res) => {
+    Donut.findById(req.params.id).then(donut => {
+        donut.quantity -= 1;
+        return donut.save()
+    }).then(donut =>{
+    res.redirect('/', + donut.id);
+    });
+});
 //= =====================
 // EXPORTS
 //= =====================
