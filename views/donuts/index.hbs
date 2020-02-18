@@ -1,19 +1,19 @@
 <main>
 	<h2>Handmade, Fresh, Daily!</h2>
 
-		<<<< START THE LOOP TO DISPLAY EACH DONUT >>>>
+		{{#each donuts }}
 
 			<div class="donut-container">
 
-				<<<< DONUT IMAGE HERE >>>>
+				<img src="{{ img }}">
 
-				<h3>   <<<< LINK TO DONUT'S SHOW PAGE, DONUT NAME AS LINK NAME >>>>   </h3>
+				<h3><a href=""{{ id }}"">{{ name }}</a></h3>
 
-				<p>$ <<<< DONUT PRICE HERE >>>> each </p>
+				<p>$ {{ price }} each </p>
 
 			</div>
 
-		<<<< END THE LOOP >>>>
+		{{/each}}
 
 
 </main>
