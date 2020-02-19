@@ -72,7 +72,7 @@ donutRouter.get('/:id/edit', (req, res) => {
         editedDonut = donut;
         return Coffee.find();
     }).then(coffees => {
-        res.render('donuts/edit', { editedDonut, coffees });
+        res.render('donuts/edit', { donut: editedDonut, coffees });
     })
 });
 

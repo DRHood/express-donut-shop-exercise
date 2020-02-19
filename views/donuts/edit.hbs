@@ -14,12 +14,12 @@
 			Price: <input type="number" name="price" value="{{ donut.price }}"/><br/>
 			Quantity: <input type="number" name="qty" value="{{ donut.qty }}"/><br/>
 			Coffee: <select name="coffee" id="">
-						<option value="0" selected>Choose Coffee</option>
+						<option value="" selected>No Coffee</option>
 						{{!-- TODO: add selected --}}
 						{{#each coffees }}
 							<option value="{{ id }}">{{ name }}</option>
 						{{/each }}
-					</select>
+					</select><br/>
 			<input type="submit" value="Edit"/>
 		</form>
 
