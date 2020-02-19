@@ -1,0 +1,25 @@
+<main>
+
+	<h2>EDIT THIS COFFEE!</h2>
+
+	<a href="/">Return to Home Page</a>
+
+	<div id="edit-form" class="donut-container-show">
+
+
+		<form action="/{{ coffee.id }}?_method=PUT" method="POST">
+			Name: <input type="text" name="name" value="{{ coffee.name }}"/><br/>
+			Description: <input type="text" name="description" value="{{ coffee.description}}"/><br/>
+			Image: <input type="text" name="img" value="{{ coffee.img }}"/><br/>
+			Price: <input type="number" name="price" value="{{ coffee.price }}"/><br/>
+			Quantity: <input type="number" name="qty" value="{{ coffee.qty }}"/><br/>
+			<input type="submit" value="Edit"/>
+		</form>
+
+
+		<div id="img-preview">
+			<img src="{{coffee.img}}">
+		</div>
+
+	</div>
+</main>

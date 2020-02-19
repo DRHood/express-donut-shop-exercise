@@ -1,0 +1,51 @@
+<main>
+
+	<h2>You are viewing:
+
+		{{ coffee.name }}
+
+	</h2>
+
+	<a href="/">Return to Home Page</a>
+
+	<div class="donut-container-show">
+		<h2 id="donut-name">
+
+				{{ coffee.name }}
+
+		</h2>
+
+				<img src="{{ coffee.img }}" alt="">
+
+		<br>
+		<h3>Description:</h3>
+			<p>
+
+				{{ coffee.description }}
+
+			</p><br>
+		<h3>Price:</h3>
+			<p id="cost">$
+
+				{{ coffee.price }} each</p><br>
+
+			<h3 id="quantity">
+
+	 				{{ coffee.qty }} remaining
+
+			</h3>
+
+			<br>
+
+			<a href="/{{ coffee.id }}/edit">Edit coffee</a>
+
+			<form action="{{ coffee }}/buy?_method=PUT" method="POST">
+				<input type="submit" value="Buy Now!">
+			</form>
+
+		</div>
+
+		<form action="/{{ coffee.id }}?_method=DELETE" method="POST">
+			<input type="submit" value="Delete Coffee">
+		</form>
+</main>

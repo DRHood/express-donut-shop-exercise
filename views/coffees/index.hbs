@@ -1,0 +1,22 @@
+<main>
+	<h2>Handmade, Fresh, Daily!</h2>
+
+		{{#each coffee }}
+
+			<div class="donut-container">
+
+				<img src="{{ img }}">
+
+				<h3><a href="{{ id }}">{{ name }}</a></h3>
+
+				<p>$ {{ price }} each </p>
+
+			</div>
+
+		{{/each}}
+
+		<a href="/random">Are you feeling lucky?</a>
+
+		<a href="/new">Create new coffee</a>
+
+</main>

@@ -12,10 +12,6 @@ name: {
     type: String,
     required: true
 },
-description: {
-    type: String,
-    required: true
-},
 img: String,
 price: Number,
 cups: Number
