@@ -6,6 +6,7 @@ let donutRouter = express.Router()
 //= =====================
 // require the Donut model
 const Donut = require('../models/Donut');
+const Coffee = require('../models/Coffee')
 
 //= =====================
 // INDEX
@@ -66,9 +67,13 @@ donutRouter.post('/',(req, res) => {
 // Create a GET edit route "/:id/edit" that renders the edit.hbs page and
 // sends that a Donut's data to it
 donutRouter.get('/:id/edit', (req, res) => {
+    let editedDonut = null;
     Donut.findById(req.params.id).then(donut => {
-        res.render('donuts/edit', { donut });
-    });
+        editedDonut = donut;
+        return Coffee.find();
+    }).then(coffees => {
+        res.render('donuts/edit', { editedDonut, coffees });
+    })
 });
 
 //= =====================

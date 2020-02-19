@@ -38,10 +38,10 @@ let newDonuts = [
     qty: 23
   }
 ]
-
+let coffeeObjects;
 Donut.deleteMany().then (() => {
-  Donut.create(newDonuts).then(donuts => {
-  console.log('Saved Donuts', donuts)
-  });
-});
+  return coffeeObjects.deleteMany();
+}).then(() => {
+  
+})
 

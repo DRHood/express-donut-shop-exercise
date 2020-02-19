@@ -18,7 +18,10 @@ description: {
 },
 img: String,
 price: Number,
-qty: Number
+qty: Number,
+coffee: {
+    type:
+}
 });
 
 // export the donut model with module.exports

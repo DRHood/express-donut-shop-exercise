@@ -36,6 +36,9 @@
 			</h3>
 
 			<br>
+			{{#if donut.coffee }}
+				<p>We recommend {{ donut.coffee.name }} with this donut.</p>
+			{{/if}}
 
 			<a href="/{{ donut.id }}/edit">Edit donut</a>
 
